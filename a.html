@@ -1,0 +1,66 @@
+<h1>JSON SEVER</h1>
+
+<form #userForm="ngForm" (ngSubmit)="addUser(userForm.value)">
+  <input type="text" placeholder="Enter Name" [ngModel]="selectUpdatedUser?.name" name="name" />
+  <br />
+  <br />
+  <input type="email" placeholder="Enter Email" [ngModel]="selectUpdatedUser?.email" name="email" />
+  <br />
+  <br />
+  <input type="number" placeholder="Enter Age" [ngModel]="selectUpdatedUser?.age" name="age" />
+  <br />
+  <br />
+  @if(selectUpdatedUser) {
+    <button type="submit" style="background-color: rgb(188, 49, 2); color: white; border-radius: 6px; height: 25px;">
+      Update User
+    </button>
+  } @else {
+    <button type="submit" style="background-color: green; color: white; border-radius: 6px; height: 25px;">
+      Add User
+    </button>
+  }
+</form>
+
+@for(user of userList; track user.id) {
+<ul>
+  <div
+    style="
+      display: flex;
+      justify-content: space-between;
+      width: 43%;
+      align-items: first baseline;
+      margin-bottom: 10px;
+    "
+  >
+    <div style="display: flex; flex-direction: column; padding-left: 10px ; padding-top: 10px; ">
+      <li><b>Name: </b>{{ user.name }}</li>
+      <li><b>Email: </b>{{ user.email }}</li>
+      <li><b>Age: </b>{{ user.age }}</li>
+    </div>
+    <div style="display: flex; gap: 10px">
+      <button
+        (click)="delUser(user.id)"
+        style="
+          background-color: red;
+          color: white;
+          border-radius: 6px;
+          height: 25px;
+        "
+      >
+        Delete
+      </button>
+      <button
+        (click)="editUser(user.id)"
+        style="
+          background-color: blue;
+          color: white;
+          border-radius: 6px;
+          height: 25px;
+        "
+      >
+        Edit
+      </button>
+    </div>
+  </div>
+</ul>
+}
