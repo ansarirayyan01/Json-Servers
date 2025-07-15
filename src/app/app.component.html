@@ -1,0 +1,129 @@
+<div class="container">
+  <h1 class="title">User Management</h1>
+
+
+  <!-- Delete Confirmation Popup
+  <div *ngIf="showPopUp" class="popup">
+    <h3>Are you sure you want to Delete this User!!!</h3>
+    <div class="popup-actions">
+      <button (click)="confirmDelete()" class="btn btn-confirm">Yes</button>
+      <button (click)="cancelDelete()" class="btn btn-cancel">No</button>
+    </div>
+  </div>
+
+  Show Duplicate popup
+  <div *ngIf="showDuplicatePopup" class="popup">
+    <h3>User with same email already exists</h3>
+    <div class="popup-actions">
+      <button (click)="closeDuplicatePopup()" class="btn btn-cancel">OK</button>
+    </div>
+ </div> -->
+
+</div>
+
+<app-get-users></app-get-users>
+
+<!-- <div class="content">
+  Form Section
+  <div class="form-section">
+    <h2 class="form-title">
+      {{ selectUpdatedUser ? "Edit User" : "Add New User" }}
+    </h2>
+
+    <form
+      #userForm="ngForm"
+      (ngSubmit)="addUser(userForm.value)"
+      class="user-form"
+    >
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter name"
+          [ngModel]="selectUpdatedUser?.name"
+          name="name"
+          class="form-input"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter email"
+          [ngModel]="selectUpdatedUser?.email"
+          name="email"
+          class="form-input"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input
+          type="number"
+          id="age"
+          placeholder="Enter age"
+          [ngModel]="selectUpdatedUser?.age"
+          name="age"
+          class="form-input"
+          min="10"
+          max="120"
+          required
+        />
+      </div>
+
+      <div class="form-actions">
+        @if(selectUpdatedUser) {
+        <button
+          type="submit"
+          class="btn btn-update"
+          [disabled]="!userForm.valid"
+        >
+          Update User
+        </button>
+        <button type="button"  (click)="cancelEdit()" class="btn btn-cancel">
+          Cancel
+        </button>
+        } @else {
+        <button type="submit" class="btn btn-add" [disabled]="!userForm.valid">
+          Add User
+        </button>
+        }
+      </div>
+    </form>
+  </div>
+
+  Users List Section
+  <div class="users-section">
+    <h2 class="users-title">Users List</h2>
+
+    @if(userList.length === 0) {
+    <div class="empty-state">
+      <p>No users found. Add your first user above.</p>
+    </div>
+    } @else {
+    <div class="users-list">
+      @for(user of userList; track user.id) {
+      <div class="user-item">
+        <div class="user-info">
+          <h3 class="user-name"><b>Name: </b>{{ user.name }}</h3>
+          <p class="user-email"><b>Email: </b>{{ user.email }}</p>
+          <p class="user-age"><b>Age: </b>{{ user.age }}</p>
+        </div>
+
+        <div class="user-actions">
+          <button (click)="editUser(user.id)" class="btn btn-edit">Edit</button>
+          <button (click)="openDeletePopup(user.id)" class="btn btn-delete">
+            Delete
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+    }
+  </div>
+</div> -->

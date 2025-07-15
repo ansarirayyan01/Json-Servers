@@ -1,0 +1,29 @@
+<p>get-users works!</p>
+<div class="users-section">
+    <h2 class="users-title">Users List</h2>
+
+    @if(userList.length === 0) {
+    <div class="empty-state">
+      <p>No users found. Add your first user above.</p>
+    </div>
+    } @else {
+    <div class="users-list">
+      @for(user of userList; track user.id) {
+      <div class="user-item">
+        <div class="user-info">
+          <h3 class="user-name"><b>Name: </b>{{ user.name }}</h3>
+          <p class="user-email"><b>Email: </b>{{ user.email }}</p>
+          <p class="user-age"><b>Age: </b>{{ user.age }}</p>
+        </div>
+
+        <div class="user-actions">
+          <button (click)="editUser(user.id)" class="btn btn-edit">Edit</button>
+          <button (click)="openDeletePopup(user.id)" class="btn btn-delete">
+            Delete
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+    }
+  </div>
